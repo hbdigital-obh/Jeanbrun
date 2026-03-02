@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!-- WordPress Integration Note: Upload this file to your WordPress theme folder or use as a custom page template.
+     To use with Elementor, create a new page with full-width template and use HTML widget.
+     Alternatively, save as a .php file and add <?php get_header(); ?> at top. -->
+<!-- LEADBYTE CONFIG: Remplacez VOTRE_CAMPAIGN_ID et VOTRE_API_KEY ci-dessous -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dispositif Jeanbrun 2026 — Réduisez vos impôts jusqu'à 12 000€/an | maprimefiscale.fr</title>
+  <meta name="description" content="Le dispositif Jeanbrun 2026 : premier mécanisme d'amortissement en location nue en France. Économisez jusqu'à 12 000€/an d'impôt, partout en France, sans zonage." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0B3A82', dark: '#072D66', light: '#1A4FA0' },
+            gold: { DEFAULT: '#C8930A', light: '#E8B020' },
+            cta: { green: '#16A34A', orange: '#EA580C' },
+            site: { bg: '#F0F4FF', text: '#0F172A', border: '#E2E8F0' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "Dispositif Jeanbrun 2026",
+    "description": "Premier mécanisme d'amortissement en location nue en France. Économisez jusqu'à 12 000€/an d'impôt sans zonage géographique.",
+    "provider": { "@type": "Organization", "name": "maprimefiscale.fr" },
+    "feesAndCommissionsSpecification": "Simulation gratuite et sans engagement",
+    "url": "https://maprimefiscale.fr"
+  }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .counter { transition: all 0.3s; }
+    .btn-gradient { background: linear-gradient(135deg, #EA580C, #C8930A); }
+    .btn-gradient:hover { background: linear-gradient(135deg, #C84C0A, #A87808); transform: translateY(-1px); box-shadow: 0 8px 25px rgba(234,88,12,0.4); }
+    .hero-gradient { background: linear-gradient(135deg, #0B3A82 0%, #072D66 60%, #0B3A82 100%); }
+    .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .sticky-nav { backdrop-filter: blur(10px); background: rgba(255,255,255,0.95); }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .fade-in { animation: fadeInUp 0.6s ease forwards; }
+    .jeanbrun-col { background: linear-gradient(135deg, #0B3A82, #1A4FA0); }
+  </style>
+</head>
+<body class="font-sans bg-white text-site-text">
+
+<!-- ========== TOP ANNOUNCEMENT BAR ========== -->
+<div class="bg-gradient-to-r from-orange-600 to-red-600 text-white text-sm py-2 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+    <span class="font-semibold text-center sm:text-left">🔥 NOUVEAU 2026 : Le dispositif Jeanbrun remplace le Pinel — Économisez jusqu'à 12 000€/an d'impôt</span>
+    <a href="tel:+33100000000" class="whitespace-nowrap font-bold bg-white text-orange-600 px-3 py-1 rounded-full hover:bg-orange-50 transition">📞 01 XX XX XX XX</a>
+  </div>
+</div>
+
+<!-- ========== STICKY NAVBAR ========== -->
+<nav class="sticky top-0 z-50 sticky-nav border-b border-site-border shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#" class="text-xl font-black text-navy">maprimefiscale<span class="text-gold">.fr</span></a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+      <a href="#fonctionnement" class="hover:text-navy transition">Fonctionnement</a>
+      <a href="#avantages" class="hover:text-navy transition">Avantages</a>
+      <a href="#simulation" class="hover:text-navy transition">Simulation</a>
+      <a href="#faq" class="hover:text-navy transition">FAQ</a>
+    </div>
+    <a href="#hero-form" class="btn-gradient text-white px-4 py-2 rounded-lg text-sm font-bold transition">Simuler mes économies</a>
+  </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero-gradient text-white py-16 px-4" id="hero">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <!-- Left column -->
+    <div class="fade-in">
+      <span class="inline-block bg-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Dispositif officiel PLF 2026</span>
+      <h1 class="text-4xl lg:text-5xl font-black leading-tight mb-6">
+        Réduisez vos impôts jusqu'à<br/>
+        <span class="text-gold">12 000€ par an</span><br/>
+        avec le Dispositif Jeanbrun
+      </h1>
+      <p class="text-lg text-blue-100 mb-8 leading-relaxed">
+        Le premier mécanisme en France permettant l'amortissement en location nue. Applicable partout en France. Sans zonage géographique.
+      </p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 text-xl mt-0.5">✅</span>
+          <span class="text-blue-100">Amortissement fiscal <strong class="text-white">3,5% à 5,5%</strong> selon le type de loyer</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 text-xl mt-0.5">✅</span>
+          <span class="text-blue-100">Cumulable avec le déficit foncier <strong class="text-white">(report jusqu'à 10 700€/an)</strong></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 text-xl mt-0.5">✅</span>
+          <span class="text-blue-100">Valable jusqu'au <strong class="text-white">31 décembre 2028</strong></span>
+        </li>
+      </ul>
+      <!-- Urgency -->
+      <div class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 mb-6 flex items-center gap-3">
+        <span class="text-2xl">⚡</span>
+        <span class="text-sm text-blue-100">Dispositif valable jusqu'au <strong class="text-white">31/12/2028</strong> — Prenez rendez-vous avant la fin des slots disponibles</span>
+      </div>
+      <!-- Trust badges -->
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-xs font-medium">🏛️ Dispositif officiel</span>
+        <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-xs font-medium">⚖️ 100% légal</span>
+        <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-xs font-medium">👤 Conseiller dédié</span>
+      </div>
+    </div>
+    <!-- Right column: Lead Form -->
+    <div id="hero-form" class="bg-white rounded-2xl shadow-2xl p-8 text-site-text">
+      <h2 class="text-2xl font-bold text-navy mb-1">Simulez vos économies d'impôt gratuitement</h2>
+      <p class="text-gray-500 text-sm mb-6">Réponse en moins de 24h par un expert</p>
+      <form id="hero-lead-form" class="space-y-4">
+        <input type="hidden" name="c3" value="" />
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
+            <input name="firstname" type="text" required placeholder="Jean" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Nom *</label>
+            <input name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
+          <input name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
+          <input name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Revenus imposables</label>
+          <select name="revenus" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez...</option>
+            <option>Moins de 30 000€</option>
+            <option>30 000 – 50 000€</option>
+            <option>50 000 – 80 000€</option>
+            <option>80 000 – 120 000€</option>
+            <option>Plus de 120 000€</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement</label>
+          <select name="budget" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez...</option>
+            <option>Moins de 100 000€</option>
+            <option>100 000 – 200 000€</option>
+            <option>200 000 – 350 000€</option>
+            <option>Plus de 350 000€</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-base transition shadow-lg">
+          🚀 Recevoir ma simulation gratuite
+        </button>
+        <p class="text-center text-xs text-gray-400 mt-2">🔒 Vos données sont protégées — RGPD conforme</p>
+        <div class="text-center text-sm font-medium text-gray-600">⭐⭐⭐⭐⭐ 4.9/5 — 2 847 simulations réalisées</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS BAR ========== -->
+<section class="bg-navy-dark py-10 px-4" style="background:#072D66;">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+    <div>
+      <div class="text-4xl font-black text-gold mb-1">12 000€</div>
+      <div class="text-sm text-blue-200">Économie d'impôt max par an</div>
+    </div>
+    <div>
+      <div class="text-4xl font-black text-gold mb-1">5,5%</div>
+      <div class="text-sm text-blue-200">Taux d'amortissement maximum</div>
+    </div>
+    <div>
+      <div class="text-4xl font-black text-gold mb-1">9 ans</div>
+      <div class="text-sm text-blue-200">Durée d'engagement</div>
+    </div>
+    <div>
+      <div class="text-4xl font-black text-gold mb-1">50 000</div>
+      <div class="text-sm text-blue-200">Logements visés en 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== POURQUOI SECTION ========== -->
+<section id="avantages" class="py-20 px-4 bg-site-bg">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Innovation fiscale</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2 mb-4">Le dispositif qui réinvente la défiscalisation immobilière</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">Pour la première fois en France, un mécanisme combine amortissement ET déduction sur revenus fonciers</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-site-border">
+        <div class="text-4xl mb-4">🏛️</div>
+        <h3 class="text-xl font-bold text-navy mb-3">Première historique</h3>
+        <p class="text-gray-600 leading-relaxed">Premier dispositif à proposer l'amortissement en location nue, une innovation fiscale inédite en France depuis des décennies.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-site-border">
+        <div class="text-4xl mb-4">🗺️</div>
+        <h3 class="text-xl font-bold text-navy mb-3">Partout en France</h3>
+        <p class="text-gray-600 leading-relaxed">Aucun zonage géographique restrictif. Investissez là où vous le souhaitez, contrairement aux anciens dispositifs Pinel et Denormandie.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-site-border">
+        <div class="text-4xl mb-4">⚖️</div>
+        <h3 class="text-xl font-bold text-navy mb-3">Double avantage</h3>
+        <p class="text-gray-600 leading-relaxed">Amortissement du bien + imputation du déficit foncier sur le revenu global jusqu'à 10 700€/an. Une combinaison inédite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMMENT CA MARCHE ========== -->
+<section id="fonctionnement" class="py-20 px-4 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Simple & efficace</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2">3 étapes pour optimiser votre fiscalité</h2>
+    </div>
+    <div class="space-y-8">
+      <!-- Étape 1 -->
+      <div class="flex gap-6 items-start bg-site-bg rounded-2xl p-8 border border-site-border">
+        <div class="flex-shrink-0 w-14 h-14 bg-gold rounded-full flex items-center justify-center text-white text-2xl font-black shadow-lg">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy mb-2">Choisissez votre bien</h3>
+          <p class="text-gray-600 leading-relaxed">Logement neuf ou ancien rénové (≥ 30% du prix d'acquisition), locatif nu, immeuble collectif, partout en France. Aucune contrainte géographique.</p>
+        </div>
+      </div>
+      <!-- Étape 2 -->
+      <div class="flex gap-6 items-start bg-site-bg rounded-2xl p-8 border border-site-border">
+        <div class="flex-shrink-0 w-14 h-14 bg-gold rounded-full flex items-center justify-center text-white text-2xl font-black shadow-lg">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy mb-3">Sélectionnez votre niveau de loyer</h3>
+          <div class="grid md:grid-cols-3 gap-4 mt-2">
+            <div class="bg-white rounded-xl p-4 border-2 border-blue-100 text-center">
+              <div class="font-bold text-navy text-sm mb-1">Loyer intermédiaire</div>
+              <div class="text-xs text-gray-500 mb-2">-15% marché</div>
+              <div class="text-2xl font-black text-gold">3,5%</div>
+              <div class="text-xs text-gray-500">plafonné 8 000€/an</div>
+            </div>
+            <div class="bg-white rounded-xl p-4 border-2 border-blue-200 text-center">
+              <div class="font-bold text-navy text-sm mb-1">Loyer social</div>
+              <div class="text-xs text-gray-500 mb-2">-30% marché</div>
+              <div class="text-2xl font-black text-gold">4,5%</div>
+              <div class="text-xs text-gray-500">plafonné 10 000€/an</div>
+            </div>
+            <div class="bg-navy rounded-xl p-4 border-2 border-navy text-center text-white">
+              <div class="font-bold text-sm mb-1">Loyer très social</div>
+              <div class="text-xs text-blue-200 mb-2">Maximum de solidarité</div>
+              <div class="text-2xl font-black text-gold">5,5%</div>
+              <div class="text-xs text-blue-200">plafonné 12 000€/an</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Étape 3 -->
+      <div class="flex gap-6 items-start bg-site-bg rounded-2xl p-8 border border-site-border">
+        <div class="flex-shrink-0 w-14 h-14 bg-gold rounded-full flex items-center justify-center text-white text-2xl font-black shadow-lg">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy mb-2">Déduisez et économisez</h3>
+          <p class="text-gray-600 leading-relaxed">Déduction des amortissements sur vos revenus fonciers + report du déficit foncier jusqu'à <strong class="text-navy">10 700€/an</strong> sur vos revenus globaux. Un double effet de levier fiscal inédit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SIMULATION SECTION ========== -->
+<section id="simulation" class="py-20 px-4" style="background: linear-gradient(135deg, #0B3A82, #1A4FA0);">
+  <div class="max-w-4xl mx-auto text-white">
+    <div class="text-center mb-10">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Exemple concret</span>
+      <h2 class="text-3xl lg:text-4xl font-black mt-2 mb-4">Simulez votre économie d'impôt</h2>
+    </div>
+    <div class="bg-white rounded-2xl overflow-hidden shadow-2xl text-site-text">
+      <table class="w-full">
+        <thead>
+          <tr style="background:#0B3A82;" class="text-white">
+            <th class="text-left px-6 py-4 font-bold">Situation</th>
+            <th class="text-right px-6 py-4 font-bold">Valeur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 text-gray-700">Prix du bien</td>
+            <td class="px-6 py-4 text-right font-bold text-navy">250 000€</td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 text-gray-700">Niveau de loyer choisi</td>
+            <td class="px-6 py-4 text-right font-bold text-navy">Très social (−30%)</td>
+          </tr>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 text-gray-700">Taux d'amortissement</td>
+            <td class="px-6 py-4 text-right font-bold text-gold">5,5%</td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 text-gray-700">Amortissement annuel brut</td>
+            <td class="px-6 py-4 text-right font-bold text-navy">13 750€ <span class="text-sm text-gray-500">(plafonné à 12 000€)</span></td>
+          </tr>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 text-gray-700">Tranche marginale d'imposition</td>
+            <td class="px-6 py-4 text-right font-bold text-navy">30%</td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 text-gray-700">Économie d'impôt annuelle</td>
+            <td class="px-6 py-4 text-right font-bold text-cta-green text-lg">3 600€/an</td>
+          </tr>
+          <tr style="background: linear-gradient(135deg, #0B3A82, #1A4FA0);" class="text-white">
+            <td class="px-6 py-5 font-bold text-lg">Total économisé sur 9 ans</td>
+            <td class="px-6 py-5 text-right font-black text-gold text-2xl">32 400€</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-center text-blue-200 text-xs mt-4">Simulation à titre indicatif. Contactez un conseiller pour une étude personnalisée.</p>
+    <div class="text-center mt-6">
+      <a href="#hero-form" class="btn-gradient text-white font-bold px-8 py-4 rounded-xl text-base inline-block transition shadow-lg">Obtenir ma simulation personnalisée</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ÉLIGIBILITÉ ========== -->
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Conditions</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2">Êtes-vous éligible au Dispositif Jeanbrun ?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-site-bg rounded-2xl p-6 border border-site-border">
+        <h3 class="font-bold text-navy text-lg mb-4 flex items-center gap-2">🏠 Conditions sur le logement</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Logement neuf ou ancien rénové (≥ 30% du prix)</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Immeuble collectif (appartement)</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Partout en France, sans zonage</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Location nue (non meublé)</li>
+        </ul>
+      </div>
+      <div class="bg-site-bg rounded-2xl p-6 border border-site-border">
+        <h3 class="font-bold text-navy text-lg mb-4 flex items-center gap-2">📋 Conditions de location</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Résidence principale du locataire</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Engagement locatif minimum 9 ans</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Loyer plafonné selon le niveau choisi</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Interdit de louer au sein du foyer fiscal</li>
+        </ul>
+      </div>
+      <div class="bg-site-bg rounded-2xl p-6 border border-site-border">
+        <h3 class="font-bold text-navy text-lg mb-4 flex items-center gap-2">👤 Conditions du bailleur</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Personne physique (particulier)</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Applicable dès promulgation de la loi de finances 2026</li>
+          <li class="flex items-start gap-2 text-sm text-gray-700"><span class="text-green-500 mt-0.5">✅</span>Jusqu'au 31 décembre 2028</li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-10 bg-navy/5 border border-navy/20 rounded-2xl p-6">
+      <p class="text-navy font-semibold text-lg">🔍 Vous remplissez les critères ?</p>
+      <p class="text-gray-600 mb-4">Contactez un conseiller maintenant pour démarrer votre dossier.</p>
+      <a href="#hero-form" class="btn-gradient text-white font-bold px-8 py-3 rounded-xl inline-block transition">Vérifier mon éligibilité</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPARATIF JEANBRUN VS DENORMANDIE ========== -->
+<section class="py-20 px-4 bg-site-bg">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Comparatif 2026</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2 mb-4">Dispositif Jeanbrun vs. Denormandie</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Deux dispositifs, deux philosophies. Découvrez pourquoi le Jeanbrun représente une évolution majeure par rapport au Denormandie.</p>
+    </div>
+    <div class="bg-white rounded-2xl overflow-hidden shadow-xl border border-site-border">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="bg-gray-50 text-left px-6 py-5 font-bold text-gray-700 border-b border-site-border w-1/3">Critère</th>
+            <th class="text-center px-6 py-5 font-bold text-gray-500 border-b border-site-border w-1/3">
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-xs font-medium text-gray-400 uppercase tracking-wider">Ancien dispositif</span>
+                <span class="text-lg text-gray-600">Denormandie</span>
+                <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-medium">Se termine fin 2027</span>
+              </div>
+            </th>
+            <th class="text-center px-6 py-5 font-bold border-b border-site-border w-1/3 jeanbrun-col text-white">
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-xs font-medium text-blue-200 uppercase tracking-wider">Nouveau 2026</span>
+                <span class="text-lg">Jeanbrun 2026</span>
+                <span class="text-xs bg-green-400 text-white px-2 py-0.5 rounded-full font-medium">Actif jusqu'au 31/12/2028</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Type d'avantage fiscal</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">Réduction d'impôt fixe<br/><span class="text-xs text-gray-400">(12%, 18% ou 21%)</span></td>
+            <td class="px-6 py-4 text-center text-sm font-semibold text-navy jeanbrun-col text-white">Amortissement + déduction foncière<br/><span class="text-xs text-blue-200 font-normal">(3,5% à 5,5% annuel)</span></td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Zonage géographique</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ 507 communes seulement<br/><span class="text-xs text-gray-400">Zones A, B1, B2, C</span></td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Partout en France<br/><span class="text-xs text-blue-200 font-normal">Aucune restriction</span></td>
+          </tr>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Type de bien</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">Ancien rénové uniquement<br/><span class="text-xs text-gray-400">Travaux ≥ 25% du coût</span></td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Neuf OU ancien rénové<br/><span class="text-xs text-blue-200 font-normal">Travaux ≥ 30% du prix</span></td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Durée d'engagement</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">6, 9 ou 12 ans</td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">9 ans fixe</td>
+          </tr>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Plafonnement niches fiscales</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ Oui — limité à<br/><span class="text-xs text-gray-400">10 000€/an de réduction</span></td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Mécanisme d'amortissement<br/><span class="text-xs text-blue-200 font-normal">hors plafond niche classique</span></td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Amortissement du bien</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">❌ Non</td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Oui — Premier en location nue !</td>
+          </tr>
+          <tr class="border-b border-site-border">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Déficit foncier reportable</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ Partiel<br/><span class="text-xs text-gray-400">Intérêts non déductibles globalement</span></td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Oui — jusqu'à 10 700€/an<br/><span class="text-xs text-blue-200 font-normal">sur revenus globaux</span></td>
+          </tr>
+          <tr class="border-b border-site-border bg-site-bg">
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Avantage max sur durée</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">63 000€ sur 12 ans<br/><span class="text-xs text-gray-400">(avec TMI 30%)</span></td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">32 400€+ sur 9 ans<br/><span class="text-xs text-blue-200 font-normal">+ cumulable déficit foncier</span></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Disponibilité</td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⏳ Se termine fin 2027</td>
+            <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Actif jusqu'au 31/12/2028</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-8 bg-navy/5 border-l-4 border-navy rounded-r-xl p-5">
+      <p class="text-navy font-semibold mb-1">💡 Pourquoi Jeanbrun est supérieur ?</p>
+      <p class="text-gray-600 text-sm">Le Denormandie offre une réduction d'impôt forfaitaire mais est limité à 507 communes et soumis au plafond des niches fiscales. Le Jeanbrun introduit l'amortissement en location nue — une innovation absolue — sans contrainte géographique et avec la possibilité de cumuler déficit foncier sur les revenus globaux.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Ils nous font confiance</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2">Ils ont déjà optimisé leur fiscalité</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-site-bg rounded-2xl p-6 border border-site-border card-hover">
+        <div class="flex items-center gap-1 text-gold mb-3">⭐⭐⭐⭐⭐</div>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4 italic">"Grâce au dispositif Jeanbrun, j'économise 4 920€ d'impôt par an. Le conseiller a été très professionnel et tout a été mis en place rapidement."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">MC</div>
+          <div>
+            <div class="font-semibold text-navy text-sm">Marie-Claire D.</div>
+            <div class="text-xs text-gray-500">Paris — TMI 41%</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-site-bg rounded-2xl p-6 border border-site-border card-hover">
+        <div class="flex items-center gap-1 text-gold mb-3">⭐⭐⭐⭐⭐</div>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4 italic">"J'avais regardé le Denormandie mais les 507 communes éligibles ne correspondaient pas à mes projets. Avec le Jeanbrun, j'investis où je veux. 3 600€/an d'économies !"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">PT</div>
+          <div>
+            <div class="font-semibold text-navy text-sm">Philippe T.</div>
+            <div class="text-xs text-gray-500">Lyon — TMI 30%</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-site-bg rounded-2xl p-6 border border-site-border card-hover">
+        <div class="flex items-center gap-1 text-gold mb-3">⭐⭐⭐⭐⭐</div>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4 italic">"Simulation gratuite, conseiller réactif, montage financier clair. Nous avons investi à Montpellier — exactement ce qu'il nous fallait. Merci maprimefiscale.fr !"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">IR</div>
+          <div>
+            <div class="font-semibold text-navy text-sm">Isabelle & Marc R.</div>
+            <div class="text-xs text-gray-500">Bordeaux</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" class="py-20 px-4 bg-site-bg" x-data>
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">Vos questions</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2">Questions fréquentes</h2>
+    </div>
+    <div class="space-y-4">
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Qu'est-ce que le dispositif Jeanbrun ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Le dispositif Jeanbrun est un mécanisme fiscal créé par la loi de finances 2026 permettant, pour la première fois en France, l'amortissement d'un bien immobilier en location nue. Il permet une déduction de 3,5% à 5,5% de la valeur du bien par an selon le type de loyer pratiqué, plafonnée entre 8 000€ et 12 000€ annuels.
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Quelle est la différence avec le Denormandie ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Le Denormandie offre une réduction d'impôt forfaitaire (12 à 21%) mais est limité à 507 communes éligibles, concerne uniquement l'ancien rénové et est soumis au plafond des niches fiscales (10 000€/an). Le Jeanbrun s'applique partout en France, concerne le neuf ET l'ancien, et introduit l'amortissement du bien — une innovation fiscale inédite en location nue.
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Puis-je investir dans n'importe quelle ville ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Oui, c'est l'un des avantages majeurs du dispositif Jeanbrun : aucun zonage géographique n'est imposé. Contrairement au Denormandie (507 communes) ou à l'ancien Pinel (zones A, A bis, B1), vous pouvez investir partout en France selon votre stratégie patrimoniale.
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Quelle est la durée d'engagement minimum ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          L'engagement locatif minimum est de 9 ans. Pendant cette période, vous devez maintenir le bien en location nue à titre de résidence principale du locataire, avec un loyer plafonné selon le niveau choisi (intermédiaire, social ou très social).
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Puis-je cumuler avec un déficit foncier ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Oui, c'est l'un des atouts clés du Jeanbrun. Vous pouvez cumuler l'amortissement du bien avec le mécanisme de report de déficit foncier jusqu'à 10 700€/an sur vos revenus globaux. C'est une combinaison inédite qui multiplie les avantages fiscaux par rapport au Denormandie.
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Est-ce applicable aux logements anciens ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Oui, sous condition de rénovation. Le bien ancien doit faire l'objet de travaux représentant au minimum 30% du prix d'acquisition. Le logement doit également être un immeuble collectif (appartement) destiné à la location nue.
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Jusqu'à quand peut-on investir avec le Jeanbrun ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Le dispositif Jeanbrun est applicable dès la promulgation de la loi de finances 2026 et jusqu'au 31 décembre 2028. Il vous reste donc une fenêtre de 3 ans pour investir et bénéficier de ce mécanisme d'amortissement inédit.
+        </div>
+      </div>
+
+      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
+        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+          <span>Comment démarrer ma démarche ?</span>
+          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+          Remplissez le formulaire de simulation gratuite en haut de cette page. Un expert de maprimefiscale.fr vous contactera dans les 24h ouvrées pour analyser votre situation fiscale, calculer vos économies potentielles et vous accompagner dans le montage de votre investissement.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECOND LEAD FORM ========== -->
+<section class="py-20 px-4" style="background: linear-gradient(135deg, #072D66, #0B3A82);">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center text-white mb-10">
+      <span class="text-gold font-semibold text-sm uppercase tracking-wider">⚡ Simulation gratuite & sans engagement</span>
+      <h2 class="text-3xl lg:text-4xl font-black mt-2 mb-3">Commencez votre simulation fiscale dès aujourd'hui</h2>
+      <p class="text-blue-200">Nos experts sont disponibles du lundi au vendredi, 9h – 18h</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
+      <form id="footer-lead-form" class="space-y-4">
+        <input type="hidden" name="c3" value="" />
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
+            <input name="firstname" type="text" required placeholder="Jean" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Nom *</label>
+            <input name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
+          <input name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
+          <input name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Revenus imposables</label>
+          <select name="revenus" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez...</option>
+            <option>Moins de 30 000€</option>
+            <option>30 000 – 50 000€</option>
+            <option>50 000 – 80 000€</option>
+            <option>80 000 – 120 000€</option>
+            <option>Plus de 120 000€</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement</label>
+          <select name="budget" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez...</option>
+            <option>Moins de 100 000€</option>
+            <option>100 000 – 200 000€</option>
+            <option>200 000 – 350 000€</option>
+            <option>Plus de 350 000€</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-base transition shadow-lg">
+          🚀 Recevoir ma simulation gratuite
+        </button>
+        <p class="text-center text-xs text-gray-400">🔒 Vos données sont protégées — RGPD conforme</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-gray-900 text-gray-400 py-10 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+      <div>
+        <div class="text-xl font-black text-white mb-2">maprimefiscale<span class="text-gold">.fr</span></div>
+        <p class="text-sm text-gray-500 max-w-xs">Votre partenaire en optimisation fiscale immobilière. Conseils à titre informatif.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <a href="#" class="hover:text-white transition">Mentions légales</a>
+        <a href="#" class="hover:text-white transition">Politique de confidentialité</a>
+        <a href="#" class="hover:text-white transition">RGPD</a>
+        <a href="#" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 text-xs text-gray-600 text-center">
+      <p>Site opéré par maprimefiscale.fr | Conseils à titre informatif — Non substituable à un conseil professionnel agréé.</p>
+      <p class="mt-1">© 2026 maprimefiscale.fr — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile floating CTA -->
+<div class="fixed bottom-4 left-4 right-4 z-50 md:hidden">
+  <a href="#hero-form" class="btn-gradient text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-2 shadow-xl transition">
+    🚀 Simuler maintenant — Gratuit
+  </a>
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+  // === LEADBYTE CONFIGURATION ===
+  // IMPORTANT: Remplacez ces valeurs par vos identifiants Leadbyte
+  const LEADBYTE_CAMPAIGN_ID = 'VOTRE_CAMPAIGN_ID'; // Ex: 12345
+  const LEADBYTE_API_KEY = 'VOTRE_API_KEY';
+  const LEADBYTE_POST_URL = `https://api.leadbyte.co.uk/api/submit/${LEADBYTE_CAMPAIGN_ID}`;
+
+  function setupLeadbyteForm(formId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = form.querySelector('[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '⏳ Envoi en cours...';
+      submitBtn.disabled = true;
+      const formData = new FormData(form);
+      const leadData = {
+        firstname: formData.get('firstname') || '',
+        lastname: formData.get('lastname') || '',
+        email: formData.get('email') || '',
+        phone: formData.get('phone') || '',
+        custom1: formData.get('revenus') || '',
+        custom2: formData.get('budget') || '',
+        custom3: formData.get('c3') || '',
+        source: window.location.href,
+        campaign: 'jeanbrun-2026',
+        'x-key': LEADBYTE_API_KEY
+      };
+      try {
+        await fetch(LEADBYTE_POST_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'X-Key': LEADBYTE_API_KEY },
+          body: new URLSearchParams(leadData).toString()
+        });
+        showSuccessMessage(form);
+      } catch (error) {
+        console.error('Leadbyte submission error:', error);
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+        showErrorMessage(form);
+      }
+    });
+  }
+
+  function showSuccessMessage(form) {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'bg-green-50 border border-green-200 rounded-xl p-6 text-center';
+    successDiv.innerHTML = `<div class="text-4xl mb-3">✅</div><h3 class="text-xl font-bold text-green-800 mb-2">Demande envoyée avec succès !</h3><p class="text-green-700">Un expert vous contactera dans les 24h pour votre simulation personnalisée.</p>`;
+    form.replaceWith(successDiv);
+  }
+
+  function showErrorMessage(form) {
+    let errorDiv = form.querySelector('.error-message');
+    if (!errorDiv) { errorDiv = document.createElement('div'); errorDiv.className = 'error-message bg-red-50 border border-red-200 rounded-lg p-3 mt-3 text-red-700 text-sm'; form.appendChild(errorDiv); }
+    errorDiv.textContent = 'Une erreur est survenue. Veuillez réessayer ou nous appeler directement.';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    setupLeadbyteForm('hero-lead-form');
+    setupLeadbyteForm('footer-lead-form');
+    const urlParams = new URLSearchParams(window.location.search);
+    const clickId = urlParams.get('c3') || urlParams.get('click_id') || '';
+    document.querySelectorAll('input[name="c3"]').forEach(input => { input.value = clickId; });
+  });
+</script>
+
+</body>
+</html>
