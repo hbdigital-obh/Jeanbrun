@@ -59,7 +59,7 @@
 <div class="bg-gradient-to-r from-orange-600 to-red-600 text-white text-sm py-2 px-4">
   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
     <span class="font-semibold text-center sm:text-left">🔥 NOUVEAU 2026 : Le dispositif Jeanbrun remplace le Pinel — Économisez jusqu'à 12 000€/an d'impôt</span>
-    <a href="tel:+33100000000" class="whitespace-nowrap font-bold bg-white text-orange-600 px-3 py-1 rounded-full hover:bg-orange-50 transition">📞 01 XX XX XX XX</a>
+    <span class="whitespace-nowrap font-bold bg-white text-red-700 px-3 py-1 rounded-full text-xs">🔒 Réservé aux foyers fiscalisés à plus de 2 500€/an d'impôts</span>
   </div>
 </div>
 
@@ -82,10 +82,10 @@
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
     <!-- Left column -->
     <div class="fade-in">
-      <span class="inline-block bg-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Dispositif officiel PLF 2026</span>
+      <span class="inline-block bg-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Dispositif officiel Loi de Finances 2026</span>
       <h1 class="text-4xl lg:text-5xl font-black leading-tight mb-6">
         Réduisez vos impôts jusqu'à<br/>
-        <span class="text-gold">12 000€ par an</span><br/>
+        <span class="text-gold">12 000€* par an</span><br/>
         avec le Dispositif Jeanbrun
       </h1>
       <p class="text-lg text-blue-100 mb-8 leading-relaxed">
@@ -123,6 +123,18 @@
       <p class="text-gray-500 text-sm mb-6">Réponse en moins de 24h par un expert</p>
       <form id="hero-lead-form" class="space-y-4">
         <input type="hidden" name="c3" value="" />
+        <!-- Question 1 : Objectif (en premier) -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Quel est votre objectif ? *</label>
+          <select name="objectif" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez votre objectif...</option>
+            <option value="reduire-impots">Réduire mes impôts</option>
+            <option value="retraite">Préparer ma retraite</option>
+            <option value="revenus">Générer des revenus</option>
+            <option value="patrimoine">Constituer un patrimoine</option>
+          </select>
+        </div>
+        <!-- Prénom / Nom -->
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
@@ -133,28 +145,35 @@
             <input name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
+        <!-- Email -->
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
           <input name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
         </div>
+        <!-- Téléphone -->
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
           <input name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
         </div>
+        <!-- Votre imposition annuelle (obligatoire, nouvelles options) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Revenus imposables</label>
-          <select name="revenus" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Votre imposition annuelle *</label>
+          <select name="revenus" id="hero-revenus" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
-            <option>Moins de 30 000€</option>
-            <option>30 000 – 50 000€</option>
-            <option>50 000 – 80 000€</option>
-            <option>80 000 – 120 000€</option>
-            <option>Plus de 120 000€</option>
+            <option value="moins_2500">Moins de 2 500€</option>
+            <option value="2500_5000">2 500€ – 5 000€</option>
+            <option value="5000_7500">5 000€ – 7 500€</option>
+            <option value="7500_plus">7 500€ – plus de 10 000€</option>
           </select>
         </div>
-        <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement</label>
-          <select name="budget" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+        <!-- Message inéligibilité -->
+        <div id="hero-ineligible-msg" class="hidden bg-orange-50 border border-orange-200 rounded-xl p-4 text-orange-800 text-sm text-center">
+          ⚠️ <strong>Vous n'êtes pas éligible pour le moment.</strong><br/>Le dispositif Jeanbrun est réservé aux foyers fiscalisés à plus de 2 500€/an d'impôts.
+        </div>
+        <!-- Budget d'investissement (obligatoire) -->
+        <div id="hero-budget-block">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement *</label>
+          <select name="budget" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option>Moins de 100 000€</option>
             <option>100 000 – 200 000€</option>
@@ -162,10 +181,21 @@
             <option>Plus de 350 000€</option>
           </select>
         </div>
-        <button type="submit" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-base transition shadow-lg">
+        <!-- Projet d'investissement immobilier (nouveau) -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Avez-vous un projet d'investissement immobilier ? *</label>
+          <select name="projet_immo" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez...</option>
+            <option value="concret">J'ai un projet concret (&lt; 6 mois)</option>
+            <option value="reflexion">Je suis en réflexion (6–18 mois)</option>
+            <option value="renseignement">Je cherche à me renseigner</option>
+          </select>
+        </div>
+        <button type="submit" id="hero-submit-btn" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-base transition shadow-lg">
           🚀 Recevoir ma simulation gratuite
         </button>
-        <p class="text-center text-xs text-gray-400 mt-2">🔒 Vos données sont protégées — RGPD conforme</p>
+        <p class="text-center text-xs text-gray-700 font-medium mt-1">Un conseiller vous rappelle sous 24h si votre profil correspond aux critères.</p>
+        <p class="text-center text-xs text-gray-400 mt-1">🔒 Vos données sont protégées — RGPD conforme</p>
         <div class="text-center text-sm font-medium text-gray-600">⭐⭐⭐⭐⭐ 4.9/5 — 2 847 simulations réalisées</div>
       </form>
     </div>
@@ -176,7 +206,7 @@
 <section class="bg-navy-dark py-10 px-4" style="background:#072D66;">
   <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
     <div>
-      <div class="text-4xl font-black text-gold mb-1">12 000€</div>
+      <div class="text-4xl font-black text-gold mb-1">12 000€*</div>
       <div class="text-sm text-blue-200">Économie d'impôt max par an</div>
     </div>
     <div>
@@ -608,6 +638,18 @@
     <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
       <form id="footer-lead-form" class="space-y-4">
         <input type="hidden" name="c3" value="" />
+        <!-- Question 1 : Objectif (en premier) -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Quel est votre objectif ? *</label>
+          <select name="objectif" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez votre objectif...</option>
+            <option value="reduire-impots">Réduire mes impôts</option>
+            <option value="retraite">Préparer ma retraite</option>
+            <option value="revenus">Générer des revenus</option>
+            <option value="patrimoine">Constituer un patrimoine</option>
+          </select>
+        </div>
+        <!-- Prénom / Nom -->
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
@@ -618,28 +660,35 @@
             <input name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
+        <!-- Email -->
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
           <input name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
         </div>
+        <!-- Téléphone -->
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
           <input name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
         </div>
+        <!-- Votre imposition annuelle (obligatoire, nouvelles options) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Revenus imposables</label>
-          <select name="revenus" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Votre imposition annuelle *</label>
+          <select name="revenus" id="footer-revenus" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
-            <option>Moins de 30 000€</option>
-            <option>30 000 – 50 000€</option>
-            <option>50 000 – 80 000€</option>
-            <option>80 000 – 120 000€</option>
-            <option>Plus de 120 000€</option>
+            <option value="moins_2500">Moins de 2 500€</option>
+            <option value="2500_5000">2 500€ – 5 000€</option>
+            <option value="5000_7500">5 000€ – 7 500€</option>
+            <option value="7500_plus">7 500€ – plus de 10 000€</option>
           </select>
         </div>
+        <!-- Message inéligibilité -->
+        <div id="footer-ineligible-msg" class="hidden bg-orange-50 border border-orange-200 rounded-xl p-4 text-orange-800 text-sm text-center">
+          ⚠️ <strong>Vous n'êtes pas éligible pour le moment.</strong><br/>Le dispositif Jeanbrun est réservé aux foyers fiscalisés à plus de 2 500€/an d'impôts.
+        </div>
+        <!-- Budget d'investissement (obligatoire) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement</label>
-          <select name="budget" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement *</label>
+          <select name="budget" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option>Moins de 100 000€</option>
             <option>100 000 – 200 000€</option>
@@ -647,10 +696,21 @@
             <option>Plus de 350 000€</option>
           </select>
         </div>
-        <button type="submit" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-base transition shadow-lg">
+        <!-- Projet d'investissement immobilier (nouveau) -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Avez-vous un projet d'investissement immobilier ? *</label>
+          <select name="projet_immo" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+            <option value="">Sélectionnez...</option>
+            <option value="concret">J'ai un projet concret (&lt; 6 mois)</option>
+            <option value="reflexion">Je suis en réflexion (6–18 mois)</option>
+            <option value="renseignement">Je cherche à me renseigner</option>
+          </select>
+        </div>
+        <button type="submit" id="footer-submit-btn" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-base transition shadow-lg">
           🚀 Recevoir ma simulation gratuite
         </button>
-        <p class="text-center text-xs text-gray-400">🔒 Vos données sont protégées — RGPD conforme</p>
+        <p class="text-center text-xs text-gray-700 font-medium mt-1">Un conseiller vous rappelle sous 24h si votre profil correspond aux critères.</p>
+        <p class="text-center text-xs text-gray-400 mt-1">🔒 Vos données sont protégées — RGPD conforme</p>
       </form>
     </div>
   </div>
@@ -674,6 +734,7 @@
     <div class="border-t border-gray-800 pt-6 text-xs text-gray-600 text-center">
       <p>Site opéré par maprimefiscale.fr | Conseils à titre informatif — Non substituable à un conseil professionnel agréé.</p>
       <p class="mt-1">© 2026 maprimefiscale.fr — Tous droits réservés</p>
+      <p class="mt-2">* Sous conditions d'éligibilité</p>
     </div>
   </div>
 </footer>
@@ -693,6 +754,41 @@
   const LEADBYTE_API_KEY = 'VOTRE_API_KEY';
   const LEADBYTE_POST_URL = `https://api.leadbyte.co.uk/api/submit/${LEADBYTE_CAMPAIGN_ID}`;
 
+  // === META PIXEL ===
+  // IMPORTANT: Remplacez VOTRE_PIXEL_ID par votre ID Pixel Meta et décommentez le bloc ci-dessous
+  // !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  // n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  // n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  // t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  // document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  // fbq('init', 'VOTRE_PIXEL_ID');
+  // fbq('track', 'PageView');
+
+  function fireMetaLeadEvent() {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
+  }
+
+  // === ELIGIBILITÉ : affiche message si imposition < 2 500€ ===
+  function setupEligibilityCheck(selectId, msgId, submitId) {
+    const select = document.getElementById(selectId);
+    const msg = document.getElementById(msgId);
+    const btn = document.getElementById(submitId);
+    if (!select || !msg || !btn) return;
+    select.addEventListener('change', function() {
+      if (this.value === 'moins_2500') {
+        msg.classList.remove('hidden');
+        btn.disabled = true;
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        msg.classList.add('hidden');
+        btn.disabled = false;
+        btn.classList.remove('opacity-50', 'cursor-not-allowed');
+      }
+    });
+  }
+
   function setupLeadbyteForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -708,9 +804,11 @@
         lastname: formData.get('lastname') || '',
         email: formData.get('email') || '',
         phone: formData.get('phone') || '',
-        custom1: formData.get('revenus') || '',
-        custom2: formData.get('budget') || '',
-        custom3: formData.get('c3') || '',
+        custom1: formData.get('objectif') || '',
+        custom2: formData.get('revenus') || '',
+        custom3: formData.get('budget') || '',
+        custom4: formData.get('projet_immo') || '',
+        custom5: formData.get('c3') || '',
         source: window.location.href,
         campaign: 'jeanbrun-2026',
         'x-key': LEADBYTE_API_KEY
@@ -721,6 +819,7 @@
           headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'X-Key': LEADBYTE_API_KEY },
           body: new URLSearchParams(leadData).toString()
         });
+        fireMetaLeadEvent();
         showSuccessMessage(form);
       } catch (error) {
         console.error('Leadbyte submission error:', error);
@@ -734,19 +833,21 @@
   function showSuccessMessage(form) {
     const successDiv = document.createElement('div');
     successDiv.className = 'bg-green-50 border border-green-200 rounded-xl p-6 text-center';
-    successDiv.innerHTML = `<div class="text-4xl mb-3">✅</div><h3 class="text-xl font-bold text-green-800 mb-2">Demande envoyée avec succès !</h3><p class="text-green-700">Un expert vous contactera dans les 24h pour votre simulation personnalisée.</p>`;
+    successDiv.innerHTML = `<div class="text-4xl mb-3">✅</div><h3 class="text-xl font-bold text-green-800 mb-2">Demande envoyée avec succès !</h3><p class="text-green-700">Un conseiller vous rappelle sous 24h si votre profil correspond aux critères.</p>`;
     form.replaceWith(successDiv);
   }
 
   function showErrorMessage(form) {
     let errorDiv = form.querySelector('.error-message');
     if (!errorDiv) { errorDiv = document.createElement('div'); errorDiv.className = 'error-message bg-red-50 border border-red-200 rounded-lg p-3 mt-3 text-red-700 text-sm'; form.appendChild(errorDiv); }
-    errorDiv.textContent = 'Une erreur est survenue. Veuillez réessayer ou nous appeler directement.';
+    errorDiv.textContent = 'Une erreur est survenue. Veuillez réessayer.';
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     setupLeadbyteForm('hero-lead-form');
     setupLeadbyteForm('footer-lead-form');
+    setupEligibilityCheck('hero-revenus', 'hero-ineligible-msg', 'hero-submit-btn');
+    setupEligibilityCheck('footer-revenus', 'footer-ineligible-msg', 'footer-submit-btn');
     const urlParams = new URLSearchParams(window.location.search);
     const clickId = urlParams.get('c3') || urlParams.get('click_id') || '';
     document.querySelectorAll('input[name="c3"]').forEach(input => { input.value = clickId; });
