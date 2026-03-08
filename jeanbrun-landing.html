@@ -749,10 +749,8 @@
 <!-- ========== JAVASCRIPT ========== -->
 <script>
   // === LEADBYTE CONFIGURATION ===
-  // IMPORTANT: Remplacez ces valeurs par vos identifiants Leadbyte
-  const LEADBYTE_CAMPAIGN_ID = 'VOTRE_CAMPAIGN_ID'; // Ex: 12345
-  const LEADBYTE_API_KEY = 'VOTRE_API_KEY';
-  const LEADBYTE_POST_URL = `https://api.leadbyte.co.uk/api/submit/${LEADBYTE_CAMPAIGN_ID}`;
+  // IMPORTANT: Remplacez l'URL ci-dessous par le chemin réel du proxy sur votre serveur
+  const LEADBYTE_PROXY_URL = '/wp-content/leadbyte-proxy-jeanbrun.php';
 
   // === META PIXEL ===
   // IMPORTANT: Remplacez VOTRE_PIXEL_ID par votre ID Pixel Meta et décommentez le bloc ci-dessous
@@ -816,25 +814,29 @@
       submitBtn.innerHTML = '⏳ Envoi en cours...';
       submitBtn.disabled = true;
       const formData = new FormData(form);
+      // Récupérer les UTM depuis l'URL
+      const urlParams = new URLSearchParams(window.location.search);
       const leadData = {
-        firstname: formData.get('firstname') || '',
-        lastname: formData.get('lastname') || '',
-        email: formData.get('email') || '',
-        phone: formData.get('phone') || '',
-        custom1: formData.get('objectif') || '',
-        custom2: formData.get('revenus') || '',
-        custom3: formData.get('budget') || '',
-        custom4: formData.get('projet_immo') || '',
-        custom5: formData.get('c3') || '',
-        source: window.location.href,
-        campaign: 'jeanbrun-2026',
-        'x-key': LEADBYTE_API_KEY
+        firstName:    formData.get('firstname') || '',
+        lastName:     formData.get('lastname') || '',
+        email:        formData.get('email') || '',
+        phone:        formData.get('phone') || '',
+        objectif:     formData.get('objectif') || '',
+        revenus:      formData.get('revenus') || '',
+        budget:       formData.get('budget') || '',
+        projet_immo:  formData.get('projet_immo') || '',
+        c3:           formData.get('c3') || '',
+        utm_source:   urlParams.get('utm_source') || '',
+        utm_medium:   urlParams.get('utm_medium') || '',
+        utm_campaign: urlParams.get('utm_campaign') || '',
+        utm_content:  urlParams.get('utm_content') || '',
+        utm_term:     urlParams.get('utm_term') || '',
       };
       try {
-        await fetch(LEADBYTE_POST_URL, {
+        await fetch(LEADBYTE_PROXY_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'X-Key': LEADBYTE_API_KEY },
-          body: new URLSearchParams(leadData).toString()
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadData)
         });
         fireMetaLeadEvent();
         showSuccessMessage(form);
