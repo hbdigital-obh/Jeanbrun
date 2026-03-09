@@ -8,7 +8,7 @@
 // CONFIGURATION LEADBYTE
 // ============================================
 define('LEADBYTE_API_URL', 'https://adomos.leadbyte.com/restapi/v1.3/leads');
-define('LEADBYTE_CAMPAIGN_ID', 'JEANBRUN'); // ⚠️ Remplacer par le vrai Campaign ID
+define('LEADBYTE_CAMPAIGN_ID', 'DEFISC');
 define('LEADBYTE_API_KEY', '1629d646d2d2928c2e791a1062480aee'); // ⚠️ Remplacer si clé différente pour Jeanbrun
 define('LEADBYTE_SID', '1');
 define('LEADBYTE_TESTMODE', 'yes'); // ⚠️ Mettre "no" en production
@@ -144,6 +144,8 @@ $leadBytePayload = [
     'First_Name' => $formData['firstName'],
     'Last_Name'  => $formData['lastName'],
     'Phone_1'    => formatPhone($formData['phone']),
+    'Postcode'   => isset($formData['postalCode']) ? $formData['postalCode'] : '',
+    'Town/City'  => isset($formData['city'])       ? $formData['city']       : '',
 
     // Système
     'IP_Address' => $_SERVER['REMOTE_ADDR'],
