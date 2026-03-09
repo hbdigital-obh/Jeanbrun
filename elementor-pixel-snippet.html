@@ -1,0 +1,157 @@
+<!--
+=======================================================================
+  SNIPPETS À COLLER DANS ELEMENTOR — Jean Brun / maprimefiscale.fr
+  Meta Pixel 1784247088955348 + événement Lead
+
+  COMMENT UTILISER CE FICHIER :
+  Ce fichier contient 3 blocs de code à placer dans Elementor.
+  Ne pas uploader ce fichier sur le serveur — copier/coller chaque bloc.
+=======================================================================
+-->
+
+
+<!-- ===================================================================
+  BLOC 1 — META PIXEL (base)
+  Où coller : WordPress Admin → Elementor → Site Settings
+              → Custom Code → <head>
+  OU : Extensions → Insert Headers and Footers → Scripts in Header
+=================================================================== -->
+
+<!-- META PIXEL BASE — coller dans le <head> -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1784247088955348');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1784247088955348&ev=PageView&noscript=1"/>
+</noscript>
+<!-- FIN META PIXEL BASE -->
+
+
+<!-- ===================================================================
+  BLOC 2 — ÉVÉNEMENT LEAD (après soumission du formulaire)
+  Où coller : Dans Elementor, sélectionner le widget Formulaire
+              → Contenu → Actions après soumission → Custom Message
+              OU dans l'action "Redirect" → utiliser une page Merci
+
+  MÉTHODE RECOMMANDÉE — JavaScript à coller dans :
+  Elementor → Site Settings → Custom Code → <body> (end)
+  Ce code attend la soumission du formulaire Elementor et envoie Lead.
+=================================================================== -->
+
+<!-- ÉVÉNEMENT LEAD — coller dans le <body> end -->
+<script>
+  // Écoute la soumission du formulaire Elementor Pro
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Remplacer 'form_id_ici' par l'ID de ton formulaire Elementor
+    // (visible dans Elementor → Avancé → ID CSS du widget)
+    // Si tu n'as qu'un seul formulaire sur la page, laisser '#' suffit.
+    jQuery(document).on('submit_success', function (e, response) {
+      fbq('track', 'Lead', {
+        content_name: 'Jean Brun - Défiscalisation',
+        content_category: 'Lead Formulaire'
+      });
+      console.log('[Pixel] Événement Lead envoyé à Meta');
+    });
+
+  });
+</script>
+<!-- FIN ÉVÉNEMENT LEAD -->
+
+
+<!-- ===================================================================
+  BLOC 3 — UTM → Champs cachés (tracking source pub)
+  Où coller : Elementor → Site Settings → Custom Code → <body> (end)
+  Ce script lit les UTM dans l'URL et les injecte dans les champs
+  cachés du formulaire (utm_source, utm_medium, utm_campaign, etc.)
+
+  PRÉREQUIS : Ajouter dans le formulaire Elementor des champs Texte
+  cachés (Hidden Field) avec les IDs :
+    utm_source / utm_medium / utm_campaign / utm_content / utm_term / c3
+=================================================================== -->
+
+<!-- UTM TRACKING — coller dans le <body> end -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var urlParams = new URLSearchParams(window.location.search);
+    var utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'c3'];
+
+    utmFields.forEach(function (param) {
+      var value = urlParams.get(param);
+      if (value) {
+        // Elementor génère des inputs avec name="form_fields[ID]"
+        var input = document.querySelector('input[name="form_fields[' + param + ']"]');
+        if (input) {
+          input.value = value;
+        }
+      }
+    });
+  });
+</script>
+<!-- FIN UTM TRACKING -->
+
+
+<!--
+=======================================================================
+  RÉCAPITULATIF DE CONFIGURATION ELEMENTOR
+=======================================================================
+
+  1. PAGE ELEMENTOR
+     - Créer une nouvelle page WordPress
+     - Construire avec Elementor (section hero, bénéfices, formulaire)
+     - Publier la page
+
+  2. FORMULAIRE ELEMENTOR PRO
+     Widget → Formulaire → Champs :
+     ┌─────────────────┬──────────────┬──────────────────────────┐
+     │ Label           │ ID du champ  │ Type                     │
+     ├─────────────────┼──────────────┼──────────────────────────┤
+     │ Prénom          │ firstName    │ Text                     │
+     │ Nom             │ lastName     │ Text                     │
+     │ Email           │ email        │ Email                    │
+     │ Téléphone       │ phone        │ Tel                      │
+     │ Code postal     │ postalCode   │ Text                     │
+     │ Objectif        │ objectif     │ Select                   │
+     │ Imposition      │ revenus      │ Select                   │
+     │ Budget          │ budget       │ Select                   │
+     │ Projet immo     │ projet_immo  │ Select                   │
+     │ utm_source      │ utm_source   │ Hidden                   │
+     │ utm_medium      │ utm_medium   │ Hidden                   │
+     │ utm_campaign    │ utm_campaign │ Hidden                   │
+     │ utm_content     │ utm_content  │ Hidden                   │
+     │ utm_term        │ utm_term     │ Hidden                   │
+     │ c3              │ c3           │ Hidden                   │
+     └─────────────────┴──────────────┴──────────────────────────┘
+
+  3. ACTION APRÈS SOUMISSION — WEBHOOK
+     Formulaire → Actions → Ajouter action → Webhook
+     URL du webhook :
+     https://maprimefiscale.fr/leadbyte-proxy-jeanbrun-elementor.php
+
+  4. ACTION APRÈS SOUMISSION — REDIRECT (page Merci)
+     Formulaire → Actions → Ajouter action → Redirect
+     URL : https://maprimefiscale.fr/merci/
+     (créer une page "Merci" simple dans WordPress)
+
+  5. BLOCS DE CODE À PLACER
+     Site Settings → Custom Code :
+     → <head>  : coller le BLOC 1 (Meta Pixel base)
+     → </body> : coller le BLOC 2 (événement Lead) + BLOC 3 (UTM)
+
+  6. PASSER EN PRODUCTION
+     Dans leadbyte-proxy-jeanbrun-elementor.php :
+     - LEADBYTE_TESTMODE → 'no'
+     - DEBUG_MODE        → false
+
+=======================================================================
+-->
