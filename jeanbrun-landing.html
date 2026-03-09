@@ -52,6 +52,27 @@
     .fade-in { animation: fadeInUp 0.6s ease forwards; }
     .jeanbrun-col { background: linear-gradient(135deg, #0B3A82, #1A4FA0); }
   </style>
+
+  <!-- ================================================ -->
+  <!-- META PIXEL — Remplacer VOTRE_PIXEL_ID par ton ID -->
+  <!-- ================================================ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'VOTRE_PIXEL_ID'); // ← Remplacer ici
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=VOTRE_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- FIN META PIXEL -->
 </head>
 <body class="font-sans bg-white text-site-text">
 
@@ -773,18 +794,12 @@
 <!-- ========== JAVASCRIPT ========== -->
 <script>
   // === LEADBYTE CONFIGURATION ===
-  // IMPORTANT: Remplacez l'URL ci-dessous par le chemin réel du proxy sur votre serveur
-  const LEADBYTE_PROXY_URL = '/wp-content/leadbyte-proxy-jeanbrun.php';
+  // Proxy PHP sur le même serveur que la LP
+  const LEADBYTE_PROXY_URL = '/leadbyte-proxy-jeanbrun.php';
 
   // === META PIXEL ===
-  // IMPORTANT: Remplacez VOTRE_PIXEL_ID par votre ID Pixel Meta et décommentez le bloc ci-dessous
-  // !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  // n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  // n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  // t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  // document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  // fbq('init', 'VOTRE_PIXEL_ID');
-  // fbq('track', 'PageView');
+  // Le Pixel est initialisé dans le <head> (chercher "META PIXEL" dans le code)
+  // Remplacer VOTRE_PIXEL_ID aux deux endroits dans le <head>
 
   function fireMetaLeadEvent() {
     // Push dataLayer → GTM déclenchera le tag FB Lead

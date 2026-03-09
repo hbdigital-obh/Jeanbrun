@@ -14,6 +14,7 @@ define('LEADBYTE_SID', '1');
 define('LEADBYTE_TESTMODE', 'yes'); // ⚠️ Mettre "no" en production
 
 $allowedDomains = [
+    'https://lp-jeanbrun.maprimefiscale.fr',
     'https://maprimefiscale.fr',
     'https://www.maprimefiscale.fr',
     'https://adomos.fr',
