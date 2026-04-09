@@ -9,6 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dispositif Jeanbrun 2026 — Réduisez vos impôts jusqu'à 12 000€/an | maprimefiscale.fr</title>
   <meta name="description" content="Le dispositif Jeanbrun 2026 : premier mécanisme d'amortissement en location nue en France. Économisez jusqu'à 12 000€/an d'impôt, partout en France, sans zonage." />
+  <!-- Preconnect pour ressources critiques -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://cache.consentframework.com" />
+  <link rel="dns-prefetch" href="https://choices.consentframework.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
   <!-- ================================================ -->
   <!-- CMP — Consentframework (chargé en premier, avant tout script de tracking) -->
   <!-- ================================================ -->
@@ -16,18 +26,7 @@
   <script type="text/javascript" src="https://choices.consentframework.com/js/pa/49400/c/LrTgj/cmp" data-cfasync="false" referrerpolicy="unsafe-url" async></script>
   <!-- FIN CMP -->
 
-  <!-- ================================================ -->
-  <!-- GOOGLE ANALYTICS 4 — G-W01JG6RRC2 -->
-  <!-- ================================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W01JG6RRC2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W01JG6RRC2');
-  </script>
-  <!-- FIN GA4 -->
-
+  <!-- Tailwind CDN + Alpine.js (chargés après CMP) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script>
@@ -45,8 +44,10 @@
       }
     }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Google Fonts : preload + display=swap -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,26 +73,6 @@
     .jeanbrun-col { background: linear-gradient(135deg, #0B3A82, #1A4FA0); }
   </style>
 
-  <!-- ================================================ -->
-  <!-- META PIXEL — Remplacer 1784247088955348 par ton ID -->
-  <!-- ================================================ -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1784247088955348'); // ← Remplacer ici
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1784247088955348&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- FIN META PIXEL -->
 </head>
 <body class="font-sans bg-white text-site-text">
 
@@ -106,7 +87,7 @@
 <!-- ========== STICKY NAVBAR ========== -->
 <nav class="sticky top-0 z-50 sticky-nav border-b border-site-border shadow-sm">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="text-xl font-black text-navy">maprimefiscale<span class="text-gold">.fr</span></a>
+    <div class="flex items-center gap-2 text-xl font-black text-navy"><a href="#">maprimefiscale<span class="text-gold">.fr</span></a><span class="text-gray-400 font-normal">×</span><a href="https://www.adomos.com" target="_blank" rel="noopener" class="text-navy hover:text-gold transition">Adomos</a></div>
     <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
       <a href="#fonctionnement" class="hover:text-navy transition">Fonctionnement</a>
       <a href="#avantages" class="hover:text-navy transition">Avantages</a>
@@ -922,6 +903,8 @@
   }
 
   function showSuccessMessage(form) {
+    // Offer18 conversion pixel
+    new Image().src = 'https://hbdigitalperformance506022.o18a.com/p?m=29018&t=i&gb=1';
     const successDiv = document.createElement('div');
     successDiv.className = 'bg-green-50 border border-green-200 rounded-xl p-6 text-center';
     successDiv.innerHTML = `<div class="text-4xl mb-3">✅</div><h3 class="text-xl font-bold text-green-800 mb-2">Demande envoyée avec succès !</h3><p class="text-green-700">Un conseiller vous rappelle sous 24h si votre profil correspond aux critères.</p>`;
@@ -945,6 +928,40 @@
     document.querySelectorAll('input[name="c3"]').forEach(input => { input.value = clickId; });
   });
 </script>
+
+
+<!-- ================================================ -->
+<!-- GOOGLE ANALYTICS 4 — G-W01JG6RRC2 (chargé en fin de body) -->
+<!-- ================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W01JG6RRC2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W01JG6RRC2');
+</script>
+<!-- FIN GA4 -->
+
+<!-- ================================================ -->
+<!-- META PIXEL 1784247088955348 (chargé en fin de body) -->
+<!-- ================================================ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1784247088955348');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1784247088955348&ev=PageView&noscript=1"/>
+</noscript>
+<!-- FIN META PIXEL -->
 
 </body>
 </html>
