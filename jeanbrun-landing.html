@@ -219,7 +219,7 @@
 <!-- ========== STICKY NAVBAR ========== -->
 <nav class="sticky top-0 z-50 sticky-nav border-b border-site-border shadow-sm">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-2 text-xl font-black text-navy"><a href="#">maprimefiscale<span class="text-gold">.fr</span></a><span class="text-gray-400 font-normal">×</span><a href="https://www.adomos.com" target="_blank" rel="noopener" class="text-navy hover:text-gold transition">Adomos</a></div>
+    <div class="flex items-center gap-2 text-xl font-black text-navy"><a href="#">maprimefiscale<span class="text-gold">.fr</span></a><span class="text-gray-600 font-normal">×</span><a href="https://www.adomos.com" target="_blank" rel="noopener" class="text-navy hover:text-gold transition">Adomos</a></div>
     <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
       <a href="#fonctionnement" class="hover:text-navy transition">Fonctionnement</a>
       <a href="#avantages" class="hover:text-navy transition">Avantages</a>
@@ -273,13 +273,13 @@
     <!-- Right column: Lead Form -->
     <div id="hero-form" class="bg-white rounded-2xl shadow-2xl p-8 text-site-text">
       <h2 class="text-2xl font-bold text-navy mb-1">Simulez vos économies d'impôt gratuitement</h2>
-      <p class="text-gray-500 text-sm mb-6">Réponse en moins de 24h par un expert</p>
+      <p class="text-gray-600 text-sm mb-6">Réponse en moins de 24h par un expert</p>
       <form id="hero-lead-form" class="space-y-4">
         <input type="hidden" name="c3" value="" />
         <!-- Question 1 : Objectif (en premier) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Quel est votre objectif ? *</label>
-          <select name="objectif" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label for="hero-objectif" class="block text-xs font-semibold text-gray-600 mb-1">Quel est votre objectif ? *</label>
+          <select id="hero-objectif" name="objectif" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez votre objectif...</option>
             <option value="reduire-impots">Réduire mes impôts</option>
             <option value="retraite">Préparer ma retraite</option>
@@ -290,39 +290,39 @@
         <!-- Prénom / Nom -->
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
-            <input name="firstname" type="text" required placeholder="Jean" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="hero-firstname" class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
+            <input id="hero-firstname" name="firstname" type="text" required placeholder="Jean" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Nom *</label>
-            <input name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="hero-lastname" class="block text-xs font-semibold text-gray-600 mb-1">Nom *</label>
+            <input id="hero-lastname" name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
         <!-- Email + Téléphone sur la même ligne -->
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
-            <input name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="hero-email" class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
+            <input id="hero-email" name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
-            <input name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="hero-phone" class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
+            <input id="hero-phone" name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
         <!-- Code postal + Ville sur la même ligne -->
         <div class="grid grid-cols-3 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Code postal *</label>
-            <input name="cp" type="text" required placeholder="75000" maxlength="5" pattern="[0-9]{5}" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="hero-cp" class="block text-xs font-semibold text-gray-600 mb-1">Code postal *</label>
+            <input id="hero-cp" name="cp" type="text" required placeholder="75000" maxlength="5" pattern="[0-9]{5}" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
           <div class="col-span-2">
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Ville *</label>
-            <input name="ville" type="text" required placeholder="Paris" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="hero-ville" class="block text-xs font-semibold text-gray-600 mb-1">Ville *</label>
+            <input id="hero-ville" name="ville" type="text" required placeholder="Paris" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
         <!-- Votre imposition annuelle (obligatoire, nouvelles options) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Votre imposition annuelle *</label>
+          <label for="hero-revenus" class="block text-xs font-semibold text-gray-600 mb-1">Votre imposition annuelle *</label>
           <select name="revenus" id="hero-revenus" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option value="moins_2500">Moins de 2 500€</option>
@@ -337,8 +337,8 @@
         </div>
         <!-- Budget d'investissement (obligatoire) -->
         <div id="hero-budget-block">
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement *</label>
-          <select name="budget" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label for="hero-budget" class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement *</label>
+          <select id="hero-budget" name="budget" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option>Moins de 100 000€</option>
             <option>100 000 – 200 000€</option>
@@ -348,8 +348,8 @@
         </div>
         <!-- Projet d'investissement immobilier (nouveau) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Avez-vous un projet d'investissement immobilier ? *</label>
-          <select name="projet_immo" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label for="hero-projet-immo" class="block text-xs font-semibold text-gray-600 mb-1">Avez-vous un projet d'investissement immobilier ? *</label>
+          <select id="hero-projet-immo" name="projet_immo" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option value="concret">J'ai un projet concret (&lt; 6 mois)</option>
             <option value="reflexion">Je suis en réflexion (6–18 mois)</option>
@@ -360,9 +360,9 @@
           🚀 Recevoir ma simulation gratuite
         </button>
         <p class="text-center text-xs text-gray-700 font-medium mt-1">Un conseiller vous rappelle sous 24h si votre profil correspond aux critères.</p>
-        <p class="text-center text-xs text-gray-400 mt-1">🔒 Vos données sont protégées — RGPD conforme</p>
+        <p class="text-center text-xs text-gray-600 mt-1">🔒 Vos données sont protégées — RGPD conforme</p>
         <div class="text-center text-sm font-medium text-gray-600">⭐⭐⭐⭐⭐ 4.9/5 — 2 847 simulations réalisées</div>
-        <p class="text-xs text-gray-400 mt-3 leading-relaxed">En validant votre inscription, vous acceptez d'être contacté par Adomos et ses partenaires pour une étude de défiscalisation. Vous confirmez également avoir pris connaissance de la <a href="https://maprimefiscale.fr/politique-de-confidentialites/" class="underline">politique de confidentialité</a>. Vous pouvez vous désinscrire à tout moment.</p>
+        <p class="text-xs text-gray-600 mt-3 leading-relaxed">En validant votre inscription, vous acceptez d'être contacté par Adomos et ses partenaires pour une étude de défiscalisation. Vous confirmez également avoir pris connaissance de la <a href="https://maprimefiscale.fr/politique-de-confidentialites/" class="underline">politique de confidentialité</a>. Vous pouvez vous désinscrire à tout moment.</p>
       </form>
     </div>
   </div>
@@ -442,15 +442,15 @@
           <div class="grid md:grid-cols-3 gap-4 mt-2">
             <div class="bg-white rounded-xl p-4 border-2 border-blue-100 text-center">
               <div class="font-bold text-navy text-sm mb-1">Loyer intermédiaire</div>
-              <div class="text-xs text-gray-500 mb-2">-15% marché</div>
+              <div class="text-xs text-gray-600 mb-2">-15% marché</div>
               <div class="text-2xl font-black text-gold">3,5%</div>
-              <div class="text-xs text-gray-500">plafonné 8 000€/an</div>
+              <div class="text-xs text-gray-600">plafonné 8 000€/an</div>
             </div>
             <div class="bg-white rounded-xl p-4 border-2 border-blue-200 text-center">
               <div class="font-bold text-navy text-sm mb-1">Loyer social</div>
-              <div class="text-xs text-gray-500 mb-2">-30% marché</div>
+              <div class="text-xs text-gray-600 mb-2">-30% marché</div>
               <div class="text-2xl font-black text-gold">4,5%</div>
-              <div class="text-xs text-gray-500">plafonné 10 000€/an</div>
+              <div class="text-xs text-gray-600">plafonné 10 000€/an</div>
             </div>
             <div class="bg-navy rounded-xl p-4 border-2 border-navy text-center text-white">
               <div class="font-bold text-sm mb-1">Loyer très social</div>
@@ -503,7 +503,7 @@
           </tr>
           <tr class="border-b border-site-border bg-site-bg">
             <td class="px-6 py-4 text-gray-700">Amortissement annuel brut</td>
-            <td class="px-6 py-4 text-right font-bold text-navy">13 750€ <span class="text-sm text-gray-500">(plafonné à 12 000€)</span></td>
+            <td class="px-6 py-4 text-right font-bold text-navy">13 750€ <span class="text-sm text-gray-600">(plafonné à 12 000€)</span></td>
           </tr>
           <tr class="border-b border-site-border">
             <td class="px-6 py-4 text-gray-700">Tranche marginale d'imposition</td>
@@ -583,9 +583,9 @@
         <thead>
           <tr>
             <th class="bg-gray-50 text-left px-6 py-5 font-bold text-gray-700 border-b border-site-border w-1/3">Critère</th>
-            <th class="text-center px-6 py-5 font-bold text-gray-500 border-b border-site-border w-1/3">
+            <th class="text-center px-6 py-5 font-bold text-gray-600 border-b border-site-border w-1/3">
               <div class="flex flex-col items-center gap-1">
-                <span class="text-xs font-medium text-gray-400 uppercase tracking-wider">Ancien dispositif</span>
+                <span class="text-xs font-medium text-gray-600 uppercase tracking-wider">Ancien dispositif</span>
                 <span class="text-lg text-gray-600">Denormandie</span>
                 <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-medium">Se termine fin 2027</span>
               </div>
@@ -602,17 +602,17 @@
         <tbody>
           <tr class="border-b border-site-border">
             <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Type d'avantage fiscal</td>
-            <td class="px-6 py-4 text-center text-gray-600 text-sm">Réduction d'impôt fixe<br/><span class="text-xs text-gray-400">(12%, 18% ou 21%)</span></td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">Réduction d'impôt fixe<br/><span class="text-xs text-gray-600">(12%, 18% ou 21%)</span></td>
             <td class="px-6 py-4 text-center text-sm font-semibold text-navy jeanbrun-col text-white">Amortissement + déduction foncière<br/><span class="text-xs text-blue-200 font-normal">(3,5% à 5,5% annuel)</span></td>
           </tr>
           <tr class="border-b border-site-border bg-site-bg">
             <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Zonage géographique</td>
-            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ 507 communes seulement<br/><span class="text-xs text-gray-400">Zones A, B1, B2, C</span></td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ 507 communes seulement<br/><span class="text-xs text-gray-600">Zones A, B1, B2, C</span></td>
             <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Partout en France<br/><span class="text-xs text-blue-200 font-normal">Aucune restriction</span></td>
           </tr>
           <tr class="border-b border-site-border">
             <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Type de bien</td>
-            <td class="px-6 py-4 text-center text-gray-600 text-sm">Ancien rénové uniquement<br/><span class="text-xs text-gray-400">Travaux ≥ 25% du coût</span></td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">Ancien rénové uniquement<br/><span class="text-xs text-gray-600">Travaux ≥ 25% du coût</span></td>
             <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Neuf OU ancien rénové<br/><span class="text-xs text-blue-200 font-normal">Travaux ≥ 30% du prix</span></td>
           </tr>
           <tr class="border-b border-site-border bg-site-bg">
@@ -622,7 +622,7 @@
           </tr>
           <tr class="border-b border-site-border">
             <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Plafonnement niches fiscales</td>
-            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ Oui — limité à<br/><span class="text-xs text-gray-400">10 000€/an de réduction</span></td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ Oui — limité à<br/><span class="text-xs text-gray-600">10 000€/an de réduction</span></td>
             <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Mécanisme d'amortissement<br/><span class="text-xs text-blue-200 font-normal">hors plafond niche classique</span></td>
           </tr>
           <tr class="border-b border-site-border bg-site-bg">
@@ -632,12 +632,12 @@
           </tr>
           <tr class="border-b border-site-border">
             <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Déficit foncier reportable</td>
-            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ Partiel<br/><span class="text-xs text-gray-400">Intérêts non déductibles globalement</span></td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">⚠️ Partiel<br/><span class="text-xs text-gray-600">Intérêts non déductibles globalement</span></td>
             <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">✅ Oui — jusqu'à 10 700€/an<br/><span class="text-xs text-blue-200 font-normal">sur revenus globaux</span></td>
           </tr>
           <tr class="border-b border-site-border bg-site-bg">
             <td class="px-6 py-4 font-medium text-gray-700 bg-gray-50">Avantage max sur durée</td>
-            <td class="px-6 py-4 text-center text-gray-600 text-sm">63 000€ sur 12 ans<br/><span class="text-xs text-gray-400">(avec TMI 30%)</span></td>
+            <td class="px-6 py-4 text-center text-gray-600 text-sm">63 000€ sur 12 ans<br/><span class="text-xs text-gray-600">(avec TMI 30%)</span></td>
             <td class="px-6 py-4 text-center font-semibold jeanbrun-col text-white text-sm">32 400€+ sur 9 ans<br/><span class="text-xs text-blue-200 font-normal">+ cumulable déficit foncier</span></td>
           </tr>
           <tr>
@@ -670,7 +670,7 @@
           <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">MC</div>
           <div>
             <div class="font-semibold text-navy text-sm">Marie-Claire D.</div>
-            <div class="text-xs text-gray-500">Paris — TMI 41%</div>
+            <div class="text-xs text-gray-600">Paris — TMI 41%</div>
           </div>
         </div>
       </div>
@@ -681,7 +681,7 @@
           <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">PT</div>
           <div>
             <div class="font-semibold text-navy text-sm">Philippe T.</div>
-            <div class="text-xs text-gray-500">Lyon — TMI 30%</div>
+            <div class="text-xs text-gray-600">Lyon — TMI 30%</div>
           </div>
         </div>
       </div>
@@ -692,7 +692,7 @@
           <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">IR</div>
           <div>
             <div class="font-semibold text-navy text-sm">Isabelle & Marc R.</div>
-            <div class="text-xs text-gray-500">Bordeaux</div>
+            <div class="text-xs text-gray-600">Bordeaux</div>
           </div>
         </div>
       </div>
@@ -806,8 +806,8 @@
         <input type="hidden" name="c3" value="" />
         <!-- Question 1 : Objectif (en premier) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Quel est votre objectif ? *</label>
-          <select name="objectif" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label for="footer-objectif" class="block text-xs font-semibold text-gray-600 mb-1">Quel est votre objectif ? *</label>
+          <select id="footer-objectif" name="objectif" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez votre objectif...</option>
             <option value="reduire-impots">Réduire mes impôts</option>
             <option value="retraite">Préparer ma retraite</option>
@@ -818,39 +818,39 @@
         <!-- Prénom / Nom -->
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
-            <input name="firstname" type="text" required placeholder="Jean" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="footer-firstname" class="block text-xs font-semibold text-gray-600 mb-1">Prénom *</label>
+            <input id="footer-firstname" name="firstname" type="text" required placeholder="Jean" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Nom *</label>
-            <input name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="footer-lastname" class="block text-xs font-semibold text-gray-600 mb-1">Nom *</label>
+            <input id="footer-lastname" name="lastname" type="text" required placeholder="Dupont" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
         <!-- Email + Téléphone sur la même ligne -->
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
-            <input name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="footer-email" class="block text-xs font-semibold text-gray-600 mb-1">Email *</label>
+            <input id="footer-email" name="email" type="email" required placeholder="jean.dupont@email.com" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
-            <input name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="footer-phone" class="block text-xs font-semibold text-gray-600 mb-1">Téléphone *</label>
+            <input id="footer-phone" name="phone" type="tel" required placeholder="06 XX XX XX XX" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
         <!-- Code postal + Ville sur la même ligne -->
         <div class="grid grid-cols-3 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Code postal *</label>
-            <input name="cp" type="text" required placeholder="75000" maxlength="5" pattern="[0-9]{5}" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="footer-cp" class="block text-xs font-semibold text-gray-600 mb-1">Code postal *</label>
+            <input id="footer-cp" name="cp" type="text" required placeholder="75000" maxlength="5" pattern="[0-9]{5}" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
           <div class="col-span-2">
-            <label class="block text-xs font-semibold text-gray-600 mb-1">Ville *</label>
-            <input name="ville" type="text" required placeholder="Paris" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
+            <label for="footer-ville" class="block text-xs font-semibold text-gray-600 mb-1">Ville *</label>
+            <input id="footer-ville" name="ville" type="text" required placeholder="Paris" class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy" />
           </div>
         </div>
         <!-- Votre imposition annuelle (obligatoire, nouvelles options) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Votre imposition annuelle *</label>
+          <label for="footer-revenus" class="block text-xs font-semibold text-gray-600 mb-1">Votre imposition annuelle *</label>
           <select name="revenus" id="footer-revenus" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option value="moins_2500">Moins de 2 500€</option>
@@ -865,8 +865,8 @@
         </div>
         <!-- Budget d'investissement (obligatoire) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement *</label>
-          <select name="budget" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label for="footer-budget" class="block text-xs font-semibold text-gray-600 mb-1">Budget d'investissement *</label>
+          <select id="footer-budget" name="budget" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option>Moins de 100 000€</option>
             <option>100 000 – 200 000€</option>
@@ -876,8 +876,8 @@
         </div>
         <!-- Projet d'investissement immobilier (nouveau) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Avez-vous un projet d'investissement immobilier ? *</label>
-          <select name="projet_immo" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
+          <label for="footer-projet-immo" class="block text-xs font-semibold text-gray-600 mb-1">Avez-vous un projet d'investissement immobilier ? *</label>
+          <select id="footer-projet-immo" name="projet_immo" required class="w-full border border-site-border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy bg-white">
             <option value="">Sélectionnez...</option>
             <option value="concret">J'ai un projet concret (&lt; 6 mois)</option>
             <option value="reflexion">Je suis en réflexion (6–18 mois)</option>
@@ -888,20 +888,20 @@
           🚀 Recevoir ma simulation gratuite
         </button>
         <p class="text-center text-xs text-gray-700 font-medium mt-1">Un conseiller vous rappelle sous 24h si votre profil correspond aux critères.</p>
-        <p class="text-center text-xs text-gray-400 mt-1">🔒 Vos données sont protégées — RGPD conforme</p>
-        <p class="text-xs text-gray-400 mt-3 leading-relaxed">En validant votre inscription, vous acceptez d'être contacté par Adomos et ses partenaires pour une étude de défiscalisation. Vous confirmez également avoir pris connaissance de la <a href="https://maprimefiscale.fr/politique-de-confidentialites/" class="underline">politique de confidentialité</a>. Vous pouvez vous désinscrire à tout moment.</p>
+        <p class="text-center text-xs text-gray-600 mt-1">🔒 Vos données sont protégées — RGPD conforme</p>
+        <p class="text-xs text-gray-600 mt-3 leading-relaxed">En validant votre inscription, vous acceptez d'être contacté par Adomos et ses partenaires pour une étude de défiscalisation. Vous confirmez également avoir pris connaissance de la <a href="https://maprimefiscale.fr/politique-de-confidentialites/" class="underline">politique de confidentialité</a>. Vous pouvez vous désinscrire à tout moment.</p>
       </form>
     </div>
   </div>
 </section>
 
 <!-- ========== FOOTER ========== -->
-<footer class="bg-gray-900 text-gray-400 py-10 px-4">
+<footer class="bg-gray-900 text-gray-600 py-10 px-4">
   <div class="max-w-5xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
       <div>
         <div class="text-xl font-black text-white mb-2">maprimefiscale<span class="text-gold">.fr</span></div>
-        <p class="text-sm text-gray-500 max-w-xs">Votre partenaire en optimisation fiscale immobilière. Conseils à titre informatif.</p>
+        <p class="text-sm text-gray-600 max-w-xs">Votre partenaire en optimisation fiscale immobilière. Conseils à titre informatif.</p>
       </div>
       <div class="flex flex-wrap gap-4 text-sm">
         <a href="https://maprimefiscale.fr/mentions-legales/" class="hover:text-white transition">Mentions légales</a>
