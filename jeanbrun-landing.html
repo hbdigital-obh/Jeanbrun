@@ -10,9 +10,6 @@
   <title>Dispositif Jeanbrun 2026 — Réduisez vos impôts jusqu'à 12 000€/an | maprimefiscale.fr</title>
   <meta name="description" content="Le dispositif Jeanbrun 2026 : premier mécanisme d'amortissement en location nue en France. Économisez jusqu'à 12 000€/an d'impôt, partout en France, sans zonage." />
   <!-- Preconnect pour ressources critiques -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cache.consentframework.com" />
   <link rel="dns-prefetch" href="https://choices.consentframework.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -24,13 +21,6 @@
   <script type="text/javascript" src="https://cache.consentframework.com/js/pa/49400/c/LrTgj/stub" data-cfasync="false" referrerpolicy="unsafe-url"></script>
   <script type="text/javascript" src="https://choices.consentframework.com/js/pa/49400/c/LrTgj/cmp" data-cfasync="false" referrerpolicy="unsafe-url" async></script>
   <!-- FIN CMP -->
-
-  <!-- Alpine.js (deferred, FAQ accordion) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <!-- Google Fonts : preload + display=swap -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,7 +36,7 @@
     /* === Base === */
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#0F172A;background:#fff}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,Roboto,sans-serif;color:#0F172A;background:#fff}
     table{border-collapse:collapse}
     select,input,button{font-family:inherit}
     a{color:inherit;text-decoration:none}
@@ -112,7 +102,7 @@
     .space-y-3>*+*{margin-top:.75rem}.space-y-4>*+*{margin-top:1rem}.space-y-8>*+*{margin-top:2rem}
 
     /* === Typography === */
-    .font-sans{font-family:'Inter',system-ui,sans-serif}
+    .font-sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,Roboto,sans-serif}
     .font-normal{font-weight:400}.font-medium{font-weight:500}
     .font-semibold{font-weight:600}.font-bold{font-weight:700}.font-black{font-weight:900}
     .text-xs{font-size:.75rem;line-height:1rem}
@@ -206,8 +196,10 @@
     @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
     .fade-in{animation:fadeInUp .6s ease forwards}
     .jeanbrun-col{background:linear-gradient(135deg,#0B3A82,#1A4FA0)}
-    /* Alpine x-show support */
-    [x-cloak]{display:none!important}
+    /* FAQ accordion */
+    .faq-body{display:none;overflow:hidden}
+    .faq-item.open .faq-body{display:block}
+    .faq-btn{background:none;border:none;cursor:pointer;width:100%}
     /* Form inputs */
     select,input{width:100%;border:1px solid var(--site-border);border-radius:.5rem;padding:.625rem .75rem;font-size:.875rem;color:var(--site-text);background:#fff;outline:none;appearance:auto}
     select:focus,input:focus{box-shadow:0 0 0 2px rgba(11,58,130,.3);border-color:var(--navy)}
@@ -709,90 +701,90 @@
 </section>
 
 <!-- ========== FAQ ========== -->
-<section id="faq" class="py-20 px-4 bg-site-bg" x-data>
+<section id="faq" class="py-20 px-4 bg-site-bg">
   <div class="max-w-3xl mx-auto">
     <div class="text-center mb-12">
       <span class="text-gold font-semibold text-sm uppercase tracking-wider">Vos questions</span>
       <h2 class="text-3xl lg:text-4xl font-black text-navy mt-2">Questions fréquentes</h2>
     </div>
-    <div class="space-y-4">
+    <div class="space-y-4" id="faq-list">
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Qu'est-ce que le dispositif Jeanbrun ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Le dispositif Jeanbrun est un mécanisme fiscal créé par la loi de finances 2026 permettant, pour la première fois en France, l'amortissement d'un bien immobilier en location nue. Il permet une déduction de 3,5% à 5,5% de la valeur du bien par an selon le type de loyer pratiqué, plafonnée entre 8 000€ et 12 000€ annuels.
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Quelle est la différence avec le Denormandie ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Le Denormandie offre une réduction d'impôt forfaitaire (12 à 21%) mais est limité à 507 communes éligibles, concerne uniquement l'ancien rénové et est soumis au plafond des niches fiscales (10 000€/an). Le Jeanbrun s'applique partout en France, concerne le neuf ET l'ancien, et introduit l'amortissement du bien — une innovation fiscale inédite en location nue.
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Puis-je investir dans n'importe quelle ville ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Oui, c'est l'un des avantages majeurs du dispositif Jeanbrun : aucun zonage géographique n'est imposé. Contrairement au Denormandie (507 communes) ou à l'ancien Pinel (zones A, A bis, B1), vous pouvez investir partout en France selon votre stratégie patrimoniale.
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Quelle est la durée d'engagement minimum ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           L'engagement locatif minimum est de 9 ans. Pendant cette période, vous devez maintenir le bien en location nue à titre de résidence principale du locataire, avec un loyer plafonné selon le niveau choisi (intermédiaire, social ou très social).
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Puis-je cumuler avec un déficit foncier ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Oui, c'est l'un des atouts clés du Jeanbrun. Vous pouvez cumuler l'amortissement du bien avec le mécanisme de report de déficit foncier jusqu'à 10 700€/an sur vos revenus globaux. C'est une combinaison inédite qui multiplie les avantages fiscaux par rapport au Denormandie.
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Est-ce applicable aux logements anciens ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Oui, sous condition de rénovation. Le bien ancien doit faire l'objet de travaux représentant au minimum 30% du prix d'acquisition. Le logement doit également être un immeuble collectif (appartement) destiné à la location nue.
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Jusqu'à quand peut-on investir avec le Jeanbrun ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Le dispositif Jeanbrun est applicable dès la promulgation de la loi de finances 2026 et jusqu'au 31 décembre 2028. Il vous reste donc une fenêtre de 3 ans pour investir et bénéficier de ce mécanisme d'amortissement inédit.
         </div>
       </div>
 
-      <div x-data="{ open: false }" class="bg-white rounded-xl border border-site-border overflow-hidden">
-        <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
+      <div class="faq-item bg-white rounded-xl border border-site-border overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-navy hover:bg-site-bg transition">
           <span>Comment démarrer ma démarche ?</span>
-          <span x-text="open ? '−' : '+'" class="text-2xl text-gold font-bold ml-4"></span>
+          <span class="faq-icon text-2xl text-gold font-bold ml-4">+</span>
         </button>
-        <div x-show="open" x-collapse class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+        <div class="faq-body px-6 pb-5 text-gray-600 text-sm leading-relaxed">
           Remplissez le formulaire de simulation gratuite en haut de cette page. Un expert de maprimefiscale.fr vous contactera dans les 24h ouvrées pour analyser votre situation fiscale, calculer vos économies potentielles et vous accompagner dans le montage de votre investissement.
         </div>
       </div>
@@ -1066,6 +1058,21 @@
     const urlParams = new URLSearchParams(window.location.search);
     const clickId = urlParams.get('c3') || urlParams.get('click_id') || '';
     document.querySelectorAll('input[name="c3"]').forEach(input => { input.value = clickId; });
+    // FAQ accordion vanilla JS
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-icon').textContent = '+';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.querySelector('.faq-icon').textContent = '−';
+        }
+      });
+    });
   });
 </script>
 
