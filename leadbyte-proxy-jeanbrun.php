@@ -149,11 +149,12 @@ $leadBytePayload = [
     'Town/City'  => isset($formData['city'])       ? $formData['city']       : '',
 
     // Système
-    'IP_Address' => $_SERVER['REMOTE_ADDR'],
-    'Source'     => 'maprimefiscale.fr',
-    'Opt-in_Date'=> date('Y-m-d H:i:s'),
-    'optin_url'  => 'www.maprimefiscale.fr',
-    'optin'      => '1',
+    'IP_Address'    => $_SERVER['REMOTE_ADDR'],
+    'Source'        => 'Adomos',
+    'Opt-in_Date'   => date('Y-m-d H:i:s'),
+    'optin_url'     => 'https://lp-jeanbrun.maprimefiscale.fr',
+    'optin'         => '1',
+    'url_collecte'  => 'maprimefiscale.fr',
 
     // ---- Champs spécifiques Jeanbrun ----
     // Objectif du prospect
