@@ -276,9 +276,10 @@
       .flex.gap-6.items-start{flex-direction:column;gap:1rem!important}
     }
 
-    /* Testimonials — 1 colonne sur mobile */
+    /* Fix floating CTA — évite le chevauchement avec le widget CMP */
     @media(max-width:767px){
-      .grid.md\:grid-cols-3{grid-template-columns:1fr!important}
+      div.fixed.z-50.md\:hidden{right:5rem!important}
+      div.fixed.z-50.md\:hidden .btn-gradient{font-size:.875rem;padding:.875rem 1rem}
     }
   </style>
 
