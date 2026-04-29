@@ -209,11 +209,6 @@
        Breakpoints : 480px | 768px | 1024px
        ============================================ */
 
-    /* 8. Floating CTA — ajoute padding-bottom pour ne pas masquer le contenu */
-    @media(max-width:767px){
-      body{padding-bottom:5.5rem}
-    }
-
     /* 5. Hero — réduit le padding excessif sur mobile */
     @media(max-width:767px){
       .py-16{padding-top:2.25rem!important;padding-bottom:2.25rem!important}
@@ -276,11 +271,6 @@
       .flex.gap-6.items-start{flex-direction:column;gap:1rem!important}
     }
 
-    /* Fix floating CTA — évite le chevauchement avec le widget CMP */
-    @media(max-width:767px){
-      div.fixed.z-50.md\:hidden{right:5rem!important}
-      div.fixed.z-50.md\:hidden .btn-gradient{font-size:.875rem;padding:.875rem 1rem}
-    }
   </style>
 
 </head>
@@ -1005,13 +995,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Mobile floating CTA -->
-<div class="fixed bottom-4 left-4 right-4 z-50 md:hidden">
-  <a href="#hero-form" class="btn-gradient text-white font-bold py-4 rounded-xl text-base flex items-center justify-center gap-2 shadow-xl transition">
-    🚀 Simuler maintenant — Gratuit
-  </a>
-</div>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
